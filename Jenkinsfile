@@ -9,8 +9,6 @@ pipeline {
            steps {
                echo("${STARTING_MSG}")
                echo("Building App Start on Branch ${env.BRANCH_NAME}")
-               sh("chmod +x mvnw")
-               sh("./mvnw clean")
            }
         }
     }
