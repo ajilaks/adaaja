@@ -4,6 +4,7 @@ pipeline {
         stage("Build") {
            steps {
                echo("Building App")
+               sh("chmod +x mvnw")
                sh("./mvnw clean")
            }
         }
