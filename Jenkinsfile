@@ -3,7 +3,6 @@ pipeline {
     stages {
         stage("Build") {
            steps {
-               echo("BUILDING APP")
                ./mvnw clean
            }
         }
