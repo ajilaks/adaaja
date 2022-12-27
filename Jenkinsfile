@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage("Build") {
            steps {
-               echo("Building App")
+               echo("Building App Start on Branch ${env.BRANCH_NAME}")
                sh("chmod +x mvnw")
                sh("./mvnw clean")
            }
