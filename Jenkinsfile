@@ -16,8 +16,6 @@ pipeline {
                echo("Building App Start on Branch ${env.BRANCH_NAME}")
            }
         }
-    }
-    stages {
         stage("Build") {
            steps {
                echo("${STARTING_MSG}")
@@ -25,7 +23,6 @@ pipeline {
            }
         }
     }
-    
     post {
         always {
             echo "BUILD ADAAJA"
