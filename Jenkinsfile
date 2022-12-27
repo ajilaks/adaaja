@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage("Helo") {
+        stage("Build") {
            steps {
                echo("BUILDING APP")
                ./mvnw clean
