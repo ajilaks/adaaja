@@ -7,4 +7,14 @@ pipeline {
            }
         }
     }
+    
+    post {
+        always {
+            echo "BUILD ADAAJA"
+        }
+        success {
+            echo "BUILD SUCCESS"
+        
+        }
+    }
 }
