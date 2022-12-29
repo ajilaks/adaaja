@@ -1,4 +1,7 @@
 pipeline {
+   parameters {
+       choice(name:"BUILD_TYPE", choices:['BUILD', 'SNAPSHOT', 'RELEASE'])
+   }
         
     environment {
        INITIATING_MSG = "Initiate Job...."
@@ -17,12 +20,10 @@ pipeline {
            }
         }
         stage("Build") {
-                options {
-                        timeout(time:10, unit:'SECONDS')
-                }
            steps {
                sleep 20
                echo("${STARTING_MSG}")
+               echo("Build type: ${params.BUILD_TYPE}")
                echo("Building App Start on Branch ${env.BRANCH_NAME}")
            }
         }
