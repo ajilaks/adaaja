@@ -2,11 +2,7 @@ pipeline {
    parameters {
        choice(name:"BUILD_TYPE", choices:['BUILD', 'SNAPSHOT', 'RELEASE'])
    }
-   
-   triggers {
-       pollSCM("* * * * *")
-   }
-        
+      
     environment {
        INITIATING_MSG = "Initiate Job...."
         STARTING_MSG = "Starting Job...."
