@@ -27,6 +27,19 @@ pipeline {
                echo("Building App Start on Branch ${env.BRANCH_NAME}")
            }
         }
+       
+        stage("Release") {
+           when {
+              expression{
+                 return params.BUILD_TYPE == 'RELEASE'
+              }
+           }
+           steps {
+               echo("EXECUTING RELEASE....")
+               sleep 20
+               echo("VERSION RELEASED")
+           }
+        }
     }
     post {
         always {
