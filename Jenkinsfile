@@ -17,7 +17,11 @@ pipeline {
            }
         }
         stage("Build") {
+                options {
+                        timeout(time:10, unit:'SECONDS')
+                }
            steps {
+               sleep 20
                echo("${STARTING_MSG}")
                echo("Building App Start on Branch ${env.BRANCH_NAME}")
            }
