@@ -1,8 +1,10 @@
+@Library("jenkins-automation-alpha") _
+
 pipeline {
    parameters {
        choice(name:"BUILD_TYPE", choices:['BUILD', 'SNAPSHOT', 'RELEASE'])
    }
-      
+
     environment {
        INITIATING_MSG = "Initiate Job...."
         STARTING_MSG = "Starting Job...."
@@ -15,7 +17,9 @@ pipeline {
            }
            steps {
                echo("${INITIATING_MSG}")
-               echo("HBD User ${APP_USR}")
+               script {
+                    hello.world()
+               }
                echo("Building App Start on Branch ${env.BRANCH_NAME}")
            }
         }
@@ -27,7 +31,7 @@ pipeline {
                echo("Building App Start on Branch ${env.BRANCH_NAME}")
            }
         }
-       
+
         stage("Release") {
            when {
               expression{
@@ -47,7 +51,7 @@ pipeline {
         }
         success {
             echo "BUILD SUCCESS"
-        
+
         }
     }
 }
