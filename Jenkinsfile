@@ -33,7 +33,7 @@ pipeline {
                script {
                     hello.world()
                     maven.buildMultiple(
-                    [type:"java", version:"current"]
+                    [type:"java", version:"current"],
                     ["clean", "test", "clean compile"])
                }
            }
