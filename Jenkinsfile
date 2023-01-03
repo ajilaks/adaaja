@@ -19,6 +19,8 @@ pipeline {
                echo("${INITIATING_MSG}")
                script {
                     hello.world()
+                    echo(author.name())
+                    echo(author.site())
                }
                echo("Building App Start on Branch ${env.BRANCH_NAME}")
            }
