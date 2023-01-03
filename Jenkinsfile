@@ -1,4 +1,4 @@
-@Library("jenkins-automation-alpha") _
+@Library("jenkins-automation-alpha@main") _
 
 pipeline {
    parameters {
