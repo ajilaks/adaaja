@@ -32,7 +32,9 @@ pipeline {
                echo("Building App Start on Branch ${env.BRANCH_NAME}")
                script {
                     hello.world()
-                    maven.buildMultiple(["clean", "test", "clean compile"])
+                    maven.buildMultiple(
+                    [type:"java", version:"current"]
+                    ["clean", "test", "clean compile"])
                }
            }
         }
