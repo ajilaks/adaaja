@@ -19,7 +19,8 @@ pipeline {
                echo("${INITIATING_MSG}")
                script {
                     hello.world()
-                    maven.build("clean compile")
+                    echo(author.name())
+                    echo(author.site())
                }
                echo("Building App Start on Branch ${env.BRANCH_NAME}")
            }
@@ -30,6 +31,10 @@ pipeline {
                echo("${STARTING_MSG}")
                echo("Build type: ${params.BUILD_TYPE}")
                echo("Building App Start on Branch ${env.BRANCH_NAME}")
+               script {
+                    hello.world()
+                    maven.build("clean compile")
+               }
            }
         }
 
