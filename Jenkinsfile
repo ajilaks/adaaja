@@ -1,4 +1,4 @@
 @Library("jenkins-automation-alpha@main") _
 
-AlphaPipeline( [type:"java", version:"current"],
+AlphaPipeline( [type:"javascript", version:"current"],
                                   ["clean", "test", "clean compile"])
