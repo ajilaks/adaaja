@@ -27,13 +27,12 @@ pipeline {
         }
         stage("Build") {
            steps {
-               sleep 20
                echo("${STARTING_MSG}")
                echo("Build type: ${params.BUILD_TYPE}")
                echo("Building App Start on Branch ${env.BRANCH_NAME}")
                script {
                     hello.world()
-                    maven.build("clean compile")
+                    maven.buildMultiple(["clean", "test", "clean compile"])
                }
            }
         }
