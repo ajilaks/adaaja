@@ -19,8 +19,7 @@ pipeline {
                echo("${INITIATING_MSG}")
                script {
                     hello.world()
-                    echo(author.name())
-                    echo(author.site())
+                    maven.build("clean compile")
                }
                echo("Building App Start on Branch ${env.BRANCH_NAME}")
            }
